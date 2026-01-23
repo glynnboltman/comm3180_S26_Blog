@@ -1,8 +1,7 @@
 ---
 title: Glynn Boltman, Comms Blog
 image: profile.jpg
-about:
+about: 
   template: jolla
 ---
-
-About this blog
+This blog is where I will publish assignments for COMM3180. 
