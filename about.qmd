@@ -1,5 +1,5 @@
 ---
-title: About
+title: Glynn Boltman, Comms Blog
 image: profile.jpg
 about:
   template: jolla
