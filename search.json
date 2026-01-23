@@ -7,13 +7,6 @@
     "text": "This blog is where I will publish assignments for COMM3180."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "My Data Stories",
-    "section": "",
-    "text": "A test post\n\n\n\nvisualization\n\ndata stories\n\n\n\nAn example post from a Jupyter notebook\n\n\n\n\n\nJan 12, 2026\n\n\nAn LLM User\n\n\n\n\n\nNo matching items"
-  },
-  {
     "objectID": "posts/000_test_post/index.html",
     "href": "posts/000_test_post/index.html",
     "title": "A test post",
@@ -26,5 +19,26 @@
     "title": "A test post",
     "section": "Stories from data",
     "text": "Stories from data\n\nLet’s set up some data\n\n\nx = ['A', 'B', 'C']\ny = [1, 5, 3]\n\n\nNow let’s visualize it\n\nplt.bar(x, y)\nplt.show()"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "My Data Stories",
+    "section": "",
+    "text": "Testing, 123\n\n\n\nvisualization\n\ndata stories\n\ncomms\n\n\n\nClever subtitle here\n\n\n\n\n\nJan 23, 2026\n\n\nGlynn Boltman\n\n\n\n\n\n\n\n\n\n\n\n\nA test post\n\n\n\nvisualization\n\ndata stories\n\n\n\nAn example post from a Jupyter notebook\n\n\n\n\n\nJan 12, 2026\n\n\nAn LLM User\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/001_first_post/renamed_post1.html",
+    "href": "posts/001_first_post/renamed_post1.html",
+    "title": "Testing, 123",
+    "section": "",
+    "text": "# ^ this is what you have to put at the beginning of every post"
+  },
+  {
+    "objectID": "posts/001_first_post/renamed_post1.html#this-is-what-im-writing-for-content.",
+    "href": "posts/001_first_post/renamed_post1.html#this-is-what-im-writing-for-content.",
+    "title": "Testing, 123",
+    "section": "This is what I’m writing for content.",
+    "text": "This is what I’m writing for content."
   }
 ]
