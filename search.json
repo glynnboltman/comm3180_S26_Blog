@@ -7,6 +7,27 @@
     "text": "This blog is where I will publish assignments for COMM3180."
   },
   {
+    "objectID": "posts/001_first_post/renamed_post1.html",
+    "href": "posts/001_first_post/renamed_post1.html",
+    "title": "Testing, 123",
+    "section": "",
+    "text": "# ^ this is what you have to put at the beginning of every post (but be careful, because people can see commented cells)\n# be careful that the code cell is raw"
+  },
+  {
+    "objectID": "posts/001_first_post/renamed_post1.html#this-is-what-im-writing-for-content.",
+    "href": "posts/001_first_post/renamed_post1.html#this-is-what-im-writing-for-content.",
+    "title": "Testing, 123",
+    "section": "This is what I’m writing for content.",
+    "text": "This is what I’m writing for content.\nIt’s just practice, more to come!"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "My Data Stories",
+    "section": "",
+    "text": "Dataset of the Week (DOG)\n\n\n\ncoursework\n\n\n\nAssignment 2 for GitHub\n\n\n\n\n\nJan 28, 2026\n\n\nGlynn Boltman\n\n\n\n\n\n\n\n\n\n\n\n\nTesting, 123\n\n\n\nvisualization\n\ndata stories\n\ncomms\n\nother category\n\n\n\nClever subtitle here\n\n\n\n\n\nJan 23, 2026\n\n\nGlynn Boltman\n\n\n\n\n\n\n\n\n\n\n\n\nA test post\n\n\n\nvisualization\n\ndata stories\n\n\n\nAn example post from a Jupyter notebook\n\n\n\n\n\nJan 12, 2026\n\n\nAn LLM User\n\n\n\n\n\nNo matching items"
+  },
+  {
     "objectID": "posts/000_test_post/index.html",
     "href": "posts/000_test_post/index.html",
     "title": "A test post",
@@ -21,24 +42,10 @@
     "text": "Stories from data\n\nLet’s set up some data\n\n\nx = ['A', 'B', 'C']\ny = [1, 5, 3]\n\n\nNow let’s visualize it\n\nplt.bar(x, y)\nplt.show()"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "My Data Stories",
+    "objectID": "posts/002_second_post/in_class_practice.html",
+    "href": "posts/002_second_post/in_class_practice.html",
+    "title": "Dataset of the Week (DOG)",
     "section": "",
-    "text": "Testing, 123\n\n\n\nvisualization\n\ndata stories\n\ncomms\n\nother category\n\n\n\nClever subtitle here\n\n\n\n\n\nJan 23, 2026\n\n\nGlynn Boltman\n\n\n\n\n\n\n\n\n\n\n\n\nA test post\n\n\n\nvisualization\n\ndata stories\n\n\n\nAn example post from a Jupyter notebook\n\n\n\n\n\nJan 12, 2026\n\n\nAn LLM User\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/001_first_post/renamed_post1.html",
-    "href": "posts/001_first_post/renamed_post1.html",
-    "title": "Testing, 123",
-    "section": "",
-    "text": "# ^ this is what you have to put at the beginning of every post"
-  },
-  {
-    "objectID": "posts/001_first_post/renamed_post1.html#this-is-what-im-writing-for-content.",
-    "href": "posts/001_first_post/renamed_post1.html#this-is-what-im-writing-for-content.",
-    "title": "Testing, 123",
-    "section": "This is what I’m writing for content.",
-    "text": "This is what I’m writing for content.\nIt’s just practice, more to come!"
+    "text": "Important information:"
   }
 ]
