@@ -25,7 +25,7 @@
     "href": "index.html",
     "title": "My Data Stories",
     "section": "",
-    "text": "Dataset of the Week (DOG)\n\n\n\ncoursework\n\n\n\nAssignment 2 for GitHub\n\n\n\n\n\nJan 28, 2026\n\n\nGlynn Boltman\n\n\n\n\n\n\n\n\n\n\n\n\nTesting, 123\n\n\n\nvisualization\n\ndata stories\n\ncomms\n\nother category\n\n\n\nClever subtitle here\n\n\n\n\n\nJan 23, 2026\n\n\nGlynn Boltman\n\n\n\n\n\n\n\n\n\n\n\n\nA test post\n\n\n\nvisualization\n\ndata stories\n\n\n\nAn example post from a Jupyter notebook\n\n\n\n\n\nJan 12, 2026\n\n\nAn LLM User\n\n\n\n\n\nNo matching items"
+    "text": "Dataset of the Week, Glynn (DOWG)\n\n\n\ncoursework\n\n\n\nAssignment 2 for GitHub\n\n\n\n\n\nJan 28, 2026\n\n\nGlynn Boltman\n\n\n\n\n\n\n\n\n\n\n\n\nTesting, 123\n\n\n\nvisualization\n\ndata stories\n\ncomms\n\nother category\n\n\n\nClever subtitle here\n\n\n\n\n\nJan 23, 2026\n\n\nGlynn Boltman\n\n\n\n\n\n\n\n\n\n\n\n\nA test post\n\n\n\nvisualization\n\ndata stories\n\n\n\nAn example post from a Jupyter notebook\n\n\n\n\n\nJan 12, 2026\n\n\nAn LLM User\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/000_test_post/index.html",
@@ -44,7 +44,7 @@
   {
     "objectID": "posts/002_second_post/in_class_practice.html",
     "href": "posts/002_second_post/in_class_practice.html",
-    "title": "Dataset of the Week (DOG)",
+    "title": "Dataset of the Week, Glynn (DOWG)",
     "section": "",
     "text": "Important information:"
   }
