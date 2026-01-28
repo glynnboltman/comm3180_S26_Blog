@@ -25,7 +25,7 @@
     "href": "index.html",
     "title": "My Data Stories",
     "section": "",
-    "text": "Testing, 123\n\n\n\nvisualization\n\ndata stories\n\ncomms\n\n\n\nClever subtitle here\n\n\n\n\n\nJan 23, 2026\n\n\nGlynn Boltman\n\n\n\n\n\n\n\n\n\n\n\n\nA test post\n\n\n\nvisualization\n\ndata stories\n\n\n\nAn example post from a Jupyter notebook\n\n\n\n\n\nJan 12, 2026\n\n\nAn LLM User\n\n\n\n\n\nNo matching items"
+    "text": "Testing, 123\n\n\n\nvisualization\n\ndata stories\n\ncomms\n\nother category\n\n\n\nClever subtitle here\n\n\n\n\n\nJan 23, 2026\n\n\nGlynn Boltman\n\n\n\n\n\n\n\n\n\n\n\n\nA test post\n\n\n\nvisualization\n\ndata stories\n\n\n\nAn example post from a Jupyter notebook\n\n\n\n\n\nJan 12, 2026\n\n\nAn LLM User\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/001_first_post/renamed_post1.html",
@@ -39,6 +39,6 @@
     "href": "posts/001_first_post/renamed_post1.html#this-is-what-im-writing-for-content.",
     "title": "Testing, 123",
     "section": "This is what I’m writing for content.",
-    "text": "This is what I’m writing for content."
+    "text": "This is what I’m writing for content.\nIt’s just practice, more to come!"
   }
 ]
