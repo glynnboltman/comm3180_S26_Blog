@@ -7,25 +7,11 @@
     "text": "This blog is where I will publish assignments for COMM3180."
   },
   {
-    "objectID": "posts/001_first_post/renamed_post1.html",
-    "href": "posts/001_first_post/renamed_post1.html",
-    "title": "Testing, 123",
+    "objectID": "posts/002_second_post/in_class_practice.html",
+    "href": "posts/002_second_post/in_class_practice.html",
+    "title": "Dataset of the Week, Glynn (DOWG)",
     "section": "",
-    "text": "# ^ this is what you have to put at the beginning of every post (but be careful, because people can see commented cells)\n# be careful that the code cell is raw"
-  },
-  {
-    "objectID": "posts/001_first_post/renamed_post1.html#this-is-what-im-writing-for-content.",
-    "href": "posts/001_first_post/renamed_post1.html#this-is-what-im-writing-for-content.",
-    "title": "Testing, 123",
-    "section": "This is what I’m writing for content.",
-    "text": "This is what I’m writing for content.\nIt’s just practice, more to come!"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "My Data Stories",
-    "section": "",
-    "text": "Dataset of the Week, Glynn (DOWG)\n\n\n\ncoursework\n\n\n\nAssignment 2 for GitHub\n\n\n\n\n\nJan 28, 2026\n\n\nGlynn Boltman\n\n\n\n\n\n\n\n\n\n\n\n\nTesting, 123\n\n\n\nvisualization\n\ndata stories\n\ncomms\n\nother category\n\n\n\nClever subtitle here\n\n\n\n\n\nJan 23, 2026\n\n\nGlynn Boltman\n\n\n\n\n\n\n\n\n\n\n\n\nA test post\n\n\n\nvisualization\n\ndata stories\n\n\n\nAn example post from a Jupyter notebook\n\n\n\n\n\nJan 12, 2026\n\n\nAn LLM User\n\n\n\n\n\nNo matching items"
+    "text": "Important information:"
   },
   {
     "objectID": "posts/000_test_post/index.html",
@@ -42,10 +28,38 @@
     "text": "Stories from data\n\nLet’s set up some data\n\n\nx = ['A', 'B', 'C']\ny = [1, 5, 3]\n\n\nNow let’s visualize it\n\nplt.bar(x, y)\nplt.show()"
   },
   {
-    "objectID": "posts/002_second_post/in_class_practice.html",
-    "href": "posts/002_second_post/in_class_practice.html",
-    "title": "Dataset of the Week, Glynn (DOWG)",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "My Data Stories",
     "section": "",
-    "text": "Important information:"
+    "text": "Dataset of the Week: Philadelphia Weather\n\n\n\ncoursework\n\n\n\nBlog Post 2, Groundhog Day Analysis\n\n\n\n\n\nFeb 6, 2026\n\n\nGlynn Boltman\n\n\n\n\n\n\n\n\n\n\n\n\nDataset of the Week, Glynn (DOWG)\n\n\n\ncoursework\n\n\n\nAssignment 2 for GitHub\n\n\n\n\n\nJan 28, 2026\n\n\nGlynn Boltman\n\n\n\n\n\n\n\n\n\n\n\n\nTesting, 123\n\n\n\nvisualization\n\ndata stories\n\ncomms\n\nother category\n\n\n\nClever subtitle here\n\n\n\n\n\nJan 23, 2026\n\n\nGlynn Boltman\n\n\n\n\n\n\n\n\n\n\n\n\nA test post\n\n\n\nvisualization\n\ndata stories\n\n\n\nAn example post from a Jupyter notebook\n\n\n\n\n\nJan 12, 2026\n\n\nAn LLM User\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/001_first_post/renamed_post1.html",
+    "href": "posts/001_first_post/renamed_post1.html",
+    "title": "Testing, 123",
+    "section": "",
+    "text": "# ^ this is what you have to put at the beginning of every post (but be careful, because people can see commented cells)\n# be careful that the code cell is raw"
+  },
+  {
+    "objectID": "posts/001_first_post/renamed_post1.html#this-is-what-im-writing-for-content.",
+    "href": "posts/001_first_post/renamed_post1.html#this-is-what-im-writing-for-content.",
+    "title": "Testing, 123",
+    "section": "This is what I’m writing for content.",
+    "text": "This is what I’m writing for content.\nIt’s just practice, more to come!"
+  },
+  {
+    "objectID": "posts/003_DOW1_5b/groundhog_blog.html",
+    "href": "posts/003_DOW1_5b/groundhog_blog.html",
+    "title": "Dataset of the Week: Philadelphia Weather",
+    "section": "",
+    "text": "Each February, in Punxsutawney Pennsylvania, Phil the groundhog decides the fate of warm-weather loving athletes across America. If Phil emerges from his hole and sees his shadow, legend says that there will be six more weeks of winter.\nFor Phil’s fans in Philadelphia’s cycling community, the real question isn’t whether the groundhog sees his shadow — it’s how long until the bike can come out of storage.\nI analyzed 20 years of Philadelphia weather data to answer the question every winter-weary cyclist asks: when can I finally ride without freezing?\nThe answer? It depends on the year — and Phil’s predictions don’t help much.\n\nimport pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n\nweather_df = pd.read_csv('data/philadelphia_weather_2005_to_2025.csv')\nweather_df = weather_df.assign(date=pd.to_datetime(weather_df['date']))\n\n\n#make a graph that has year on the x axis, and number of days before the weather improves\n#make a new column with a value for whether the weather is &gt; 65 degrees\n#want to change this so that days = number of days after gh day until high temp = 65\n\nghday = pd.to_datetime( #makes a datetime object\n    dict( #for every row the dataset, it'll give the second of feb \n        year=weather_df[\"date\"].dt.year,\n        month=2,\n        day=2))\n\n#all days after Groundhog Day where high &gt; 70\n#example approach\n#winter_filter = (weather_df['date']&gt;=ghday) & (weather_df['date']&lt;=winter_end) #looks at dates between gh and 6 weeks after\nwarm_days = weather_df[(weather_df['date'] &gt;= ghday) & (weather_df['high'] &gt; 70)]\n    #filters by days after groundhog day, AND where tempertature is greater than 70 degrees\n\n#first warm day for each year\nfirst_warm_day = warm_days.groupby('year')['date'].min()\n\n#make a dataset that includes the year and the number of days since ghday it took to get to the warmest day\nghday_by_yr = pd.to_datetime(dict(year=first_warm_day.index, month=2, day=2)) #I had to look up how to change the code you gave us w the index\nghday_by_yr.index = first_warm_day.index  # match the index (also had to look this up)\n\n#finding the number of days it took for the weather to get better\ndays = (first_warm_day - ghday_by_yr).dt.days\n\ndays.mean()\n\nnp.float64(43.23809523809524)\n\n\n\ndays[days == days.min()]\n\nyear\n2018    18\ndtype: int64\n\n\n\ndays[days == days.max()]\n\nyear\n2014    68\ndtype: int64\n\n\nOn average, Philadelphians wait about 43 days after Groundhog Day for the first 75°F high (the perfect cycling weather). But the range is brutal. In 2018, lucky cyclists hit the roads within 18 days. But just four years later, there was a punishing 68 days of waiting, well past when Phil promised spring would arrive.\n\ndays.plot(kind='bar')\n#days.plot(kind='line', style='-o')\nplt.ylabel('Days until first day above 70°F')\nplt.xlabel('Year')\nplt.title('Days from Groundhog Day to First Warm Day')\nplt.show()\n\n\n\n\n\n\n\n\nFurthermore, there doesn’t seem to be a predictable pattern in the number of days until cyclists can reliably set out for the trail. Although 2015 through 2019 may have given false hope for an early spring, there are a clustering of years after 2010 where wait times for good riding weather were well over 40-50 days.\n\n\nEach year, Phil’s predictions fall within a six-week range, meaning that even if past weather patterns give few clues to hopeful sunbathers and sportspeople, maybe a magic groundhog can.\nThe following graph demonstrates in orange, the number of days where it took less than six weeks for the weather to improve. In 12 out of 20 years, it took over 42 days for the weather to improve. In most other cases, it took much longer.\n\n#if days are greater than 6*7 (42), then turn the bar of the graph red\nfill_colors = ['#99CCFF' if d &gt;= 42 else '#FFB266' for d in days]\n#plot\nax = days.plot(kind='bar')\nfill_colors = ['#99CCFF' if d &gt;= 42 else '#FFB266' for d in days] #days until good cycling weather is &gt; six weeks in orange\nfor patch, color in zip(ax.patches, fill_colors):\n    patch.set_facecolor(color)\nplt.ylabel('Days until first day above 70°F')\nplt.xlabel('Year')\nplt.title('Days from Groundhog Day to First Warm Day')\nplt.show()\n\n\n\n\n\n\n\n\nThe key takeaway is that although on average, it will take six weeks for winter to end, from year to year, outdoor athletes shouldn’t plan their rides or runs around a groundhog’s time frame. This variaiton suggess that bike commuters should ignore the groundhog and just buy good gloves."
+  },
+  {
+    "objectID": "posts/003_DOW1_5b/groundhog_blog.html#can-phil-schedule-your-tune-up",
+    "href": "posts/003_DOW1_5b/groundhog_blog.html#can-phil-schedule-your-tune-up",
+    "title": "Dataset of the Week: Philadelphia Weather",
+    "section": "",
+    "text": "Each year, Phil’s predictions fall within a six-week range, meaning that even if past weather patterns give few clues to hopeful sunbathers and sportspeople, maybe a magic groundhog can.\nThe following graph demonstrates in orange, the number of days where it took less than six weeks for the weather to improve. In 12 out of 20 years, it took over 42 days for the weather to improve. In most other cases, it took much longer.\n\n#if days are greater than 6*7 (42), then turn the bar of the graph red\nfill_colors = ['#99CCFF' if d &gt;= 42 else '#FFB266' for d in days]\n#plot\nax = days.plot(kind='bar')\nfill_colors = ['#99CCFF' if d &gt;= 42 else '#FFB266' for d in days] #days until good cycling weather is &gt; six weeks in orange\nfor patch, color in zip(ax.patches, fill_colors):\n    patch.set_facecolor(color)\nplt.ylabel('Days until first day above 70°F')\nplt.xlabel('Year')\nplt.title('Days from Groundhog Day to First Warm Day')\nplt.show()\n\n\n\n\n\n\n\n\nThe key takeaway is that although on average, it will take six weeks for winter to end, from year to year, outdoor athletes shouldn’t plan their rides or runs around a groundhog’s time frame. This variaiton suggess that bike commuters should ignore the groundhog and just buy good gloves."
   }
 ]
