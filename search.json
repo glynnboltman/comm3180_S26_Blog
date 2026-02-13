@@ -7,34 +7,6 @@
     "text": "This blog is where I will publish assignments for COMM3180."
   },
   {
-    "objectID": "posts/002_second_post/in_class_practice.html",
-    "href": "posts/002_second_post/in_class_practice.html",
-    "title": "Dataset of the Week, Glynn (DOWG)",
-    "section": "",
-    "text": "Important information:"
-  },
-  {
-    "objectID": "posts/000_test_post/index.html",
-    "href": "posts/000_test_post/index.html",
-    "title": "A test post",
-    "section": "",
-    "text": "import matplotlib.pyplot as plt"
-  },
-  {
-    "objectID": "posts/000_test_post/index.html#stories-from-data",
-    "href": "posts/000_test_post/index.html#stories-from-data",
-    "title": "A test post",
-    "section": "Stories from data",
-    "text": "Stories from data\n\nLet’s set up some data\n\n\nx = ['A', 'B', 'C']\ny = [1, 5, 3]\n\n\nNow let’s visualize it\n\nplt.bar(x, y)\nplt.show()"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "My Data Stories",
-    "section": "",
-    "text": "Dataset of the Week: Philadelphia Weather\n\n\n\ncoursework\n\n\n\nBlog Post 2, Groundhog Day Analysis\n\n\n\n\n\nFeb 6, 2026\n\n\nGlynn Boltman\n\n\n\n\n\n\n\n\n\n\n\n\nDataset of the Week, Glynn (DOWG)\n\n\n\ncoursework\n\n\n\nAssignment 2 for GitHub\n\n\n\n\n\nJan 28, 2026\n\n\nGlynn Boltman\n\n\n\n\n\n\n\n\n\n\n\n\nTesting, 123\n\n\n\nvisualization\n\ndata stories\n\ncomms\n\nother category\n\n\n\nClever subtitle here\n\n\n\n\n\nJan 23, 2026\n\n\nGlynn Boltman\n\n\n\n\n\n\n\n\n\n\n\n\nA test post\n\n\n\nvisualization\n\ndata stories\n\n\n\nAn example post from a Jupyter notebook\n\n\n\n\n\nJan 12, 2026\n\n\nAn LLM User\n\n\n\n\n\nNo matching items"
-  },
-  {
     "objectID": "posts/001_first_post/renamed_post1.html",
     "href": "posts/001_first_post/renamed_post1.html",
     "title": "Testing, 123",
@@ -49,6 +21,20 @@
     "text": "This is what I’m writing for content.\nIt’s just practice, more to come!"
   },
   {
+    "objectID": "posts/002_second_post/in_class_practice.html",
+    "href": "posts/002_second_post/in_class_practice.html",
+    "title": "Dataset of the Week, Glynn (DOWG)",
+    "section": "",
+    "text": "Important information:"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "My Data Stories",
+    "section": "",
+    "text": "Dataset of the Week: Philadelphia Weather\n\n\n\ncoursework\n\n\n\nBlog Post 2, Groundhog Day Analysis\n\n\n\n\n\nFeb 6, 2026\n\n\nGlynn Boltman\n\n\n\n\n\n\n\n\n\n\n\n\nDataset of the Week, Glynn (DOWG)\n\n\n\ncoursework\n\n\n\nAssignment 2 for GitHub\n\n\n\n\n\nJan 28, 2026\n\n\nGlynn Boltman\n\n\n\n\n\n\n\n\n\n\n\n\nTesting, 123\n\n\n\nvisualization\n\ndata stories\n\ncomms\n\nother category\n\n\n\nClever subtitle here\n\n\n\n\n\nJan 23, 2026\n\n\nGlynn Boltman\n\n\n\n\n\n\n\n\n\n\n\n\nA test post\n\n\n\nvisualization\n\ndata stories\n\n\n\nAn example post from a Jupyter notebook\n\n\n\n\n\nJan 12, 2026\n\n\nAn LLM User\n\n\n\n\n\nNo matching items"
+  },
+  {
     "objectID": "posts/003_DOW1_5b/groundhog_blog.html",
     "href": "posts/003_DOW1_5b/groundhog_blog.html",
     "title": "Dataset of the Week: Philadelphia Weather",
@@ -61,5 +47,19 @@
     "title": "Dataset of the Week: Philadelphia Weather",
     "section": "",
     "text": "Each year, Phil’s predictions fall within a six-week range, meaning that even if past weather patterns give few clues to hopeful sunbathers and sportspeople, maybe a magic groundhog can.\nThe following graph demonstrates in orange, the number of days where it took less than six weeks for the weather to improve. In 12 out of 20 years, it took over 42 days for the weather to improve. In most other cases, it took much longer.\n\n#if days are greater than 6*7 (42), then turn the bar of the graph red\nfill_colors = ['#99CCFF' if d &gt;= 42 else '#FFB266' for d in days]\n#plot\nax = days.plot(kind='bar')\nfill_colors = ['#99CCFF' if d &gt;= 42 else '#FFB266' for d in days] #days until good cycling weather is &gt; six weeks in orange\nfor patch, color in zip(ax.patches, fill_colors):\n    patch.set_facecolor(color)\nplt.ylabel('Days until first day above 70°F')\nplt.xlabel('Year')\nplt.title('Days from Groundhog Day to First Warm Day')\nplt.show()\n\n\n\n\n\n\n\n\nThe key takeaway is that although on average, it will take six weeks for winter to end, from year to year, outdoor athletes shouldn’t plan their rides or runs around a Phil’s time frame. This variaiton suggess that bike commuters should ignore the groundhog and just buy good gloves."
+  },
+  {
+    "objectID": "posts/000_test_post/index.html",
+    "href": "posts/000_test_post/index.html",
+    "title": "A test post",
+    "section": "",
+    "text": "import matplotlib.pyplot as plt"
+  },
+  {
+    "objectID": "posts/000_test_post/index.html#stories-from-data",
+    "href": "posts/000_test_post/index.html#stories-from-data",
+    "title": "A test post",
+    "section": "Stories from data",
+    "text": "Stories from data\n\nLet’s set up some data\n\n\nx = ['A', 'B', 'C']\ny = [1, 5, 3]\n\n\nNow let’s visualize it\n\nplt.bar(x, y)\nplt.show()"
   }
 ]
