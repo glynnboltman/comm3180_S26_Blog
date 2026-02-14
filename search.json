@@ -7,32 +7,18 @@
     "text": "This blog is where I will publish assignments for COMM3180."
   },
   {
-    "objectID": "posts/001_first_post/renamed_post1.html",
-    "href": "posts/001_first_post/renamed_post1.html",
-    "title": "Testing, 123",
+    "objectID": "posts/000_test_post/index.html",
+    "href": "posts/000_test_post/index.html",
+    "title": "A test post",
     "section": "",
-    "text": "# ^ this is what you have to put at the beginning of every post (but be careful, because people can see commented cells)\n# be careful that the code cell is raw"
+    "text": "import matplotlib.pyplot as plt"
   },
   {
-    "objectID": "posts/001_first_post/renamed_post1.html#this-is-what-im-writing-for-content.",
-    "href": "posts/001_first_post/renamed_post1.html#this-is-what-im-writing-for-content.",
-    "title": "Testing, 123",
-    "section": "This is what I’m writing for content.",
-    "text": "This is what I’m writing for content.\nIt’s just practice, more to come!"
-  },
-  {
-    "objectID": "posts/002_second_post/in_class_practice.html",
-    "href": "posts/002_second_post/in_class_practice.html",
-    "title": "Dataset of the Week, Glynn (DOWG)",
-    "section": "",
-    "text": "Important information:"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "My Data Stories",
-    "section": "",
-    "text": "Dataset of the Week: Philadelphia Weather\n\n\n\ncoursework\n\n\n\nBlog Post 2, Groundhog Day Analysis\n\n\n\n\n\nFeb 6, 2026\n\n\nGlynn Boltman\n\n\n\n\n\n\n\n\n\n\n\n\nDataset of the Week, Glynn (DOWG)\n\n\n\ncoursework\n\n\n\nAssignment 2 for GitHub\n\n\n\n\n\nJan 28, 2026\n\n\nGlynn Boltman\n\n\n\n\n\n\n\n\n\n\n\n\nTesting, 123\n\n\n\nvisualization\n\ndata stories\n\ncomms\n\nother category\n\n\n\nClever subtitle here\n\n\n\n\n\nJan 23, 2026\n\n\nGlynn Boltman\n\n\n\n\n\n\n\n\n\n\n\n\nA test post\n\n\n\nvisualization\n\ndata stories\n\n\n\nAn example post from a Jupyter notebook\n\n\n\n\n\nJan 12, 2026\n\n\nAn LLM User\n\n\n\n\n\nNo matching items"
+    "objectID": "posts/000_test_post/index.html#stories-from-data",
+    "href": "posts/000_test_post/index.html#stories-from-data",
+    "title": "A test post",
+    "section": "Stories from data",
+    "text": "Stories from data\n\nLet’s set up some data\n\n\nx = ['A', 'B', 'C']\ny = [1, 5, 3]\n\n\nNow let’s visualize it\n\nplt.bar(x, y)\nplt.show()"
   },
   {
     "objectID": "posts/003_DOW1_5b/groundhog_blog.html",
@@ -49,17 +35,45 @@
     "text": "Each year, Phil’s predictions fall within a six-week range, meaning that even if past weather patterns give few clues to hopeful sunbathers and sportspeople, maybe a magic groundhog can.\nThe following graph demonstrates in orange, the number of days where it took less than six weeks for the weather to improve. In 12 out of 20 years, it took over 42 days for the weather to improve. In most other cases, it took much longer.\n\n#if days are greater than 6*7 (42), then turn the bar of the graph red\nfill_colors = ['#99CCFF' if d &gt;= 42 else '#FFB266' for d in days]\n#plot\nax = days.plot(kind='bar')\nfill_colors = ['#99CCFF' if d &gt;= 42 else '#FFB266' for d in days] #days until good cycling weather is &gt; six weeks in orange\nfor patch, color in zip(ax.patches, fill_colors):\n    patch.set_facecolor(color)\nplt.ylabel('Days until first day above 70°F')\nplt.xlabel('Year')\nplt.title('Days from Groundhog Day to First Warm Day')\nplt.show()\n\n\n\n\n\n\n\n\nThe key takeaway is that although on average, it will take six weeks for winter to end, from year to year, outdoor athletes shouldn’t plan their rides or runs around a Phil’s time frame. This variaiton suggess that bike commuters should ignore the groundhog and just buy good gloves."
   },
   {
-    "objectID": "posts/000_test_post/index.html",
-    "href": "posts/000_test_post/index.html",
-    "title": "A test post",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "My Data Stories",
     "section": "",
-    "text": "import matplotlib.pyplot as plt"
+    "text": "Dataset of the Week: Philadelphia Weather\n\n\n\ncoursework\n\n\n\nBlog Post 2, Groundhog Day Analysis\n\n\n\n\n\nFeb 6, 2026\n\n\nGlynn Boltman\n\n\n\n\n\n\n\n\n\n\n\n\nIntroverts Online\n\n\n\ncoursework\n\n\n\nDataset of the Week 2: Big 5 Personality Test\n\n\n\n\n\nFeb 6, 2026\n\n\nGlynn Boltman\n\n\n\n\n\n\n\n\n\n\n\n\nDataset of the Week, Glynn (DOWG)\n\n\n\ncoursework\n\n\n\nAssignment 2 for GitHub\n\n\n\n\n\nJan 28, 2026\n\n\nGlynn Boltman\n\n\n\n\n\n\n\n\n\n\n\n\nTesting, 123\n\n\n\nvisualization\n\ndata stories\n\ncomms\n\nother category\n\n\n\nClever subtitle here\n\n\n\n\n\nJan 23, 2026\n\n\nGlynn Boltman\n\n\n\n\n\n\n\n\n\n\n\n\nA test post\n\n\n\nvisualization\n\ndata stories\n\n\n\nAn example post from a Jupyter notebook\n\n\n\n\n\nJan 12, 2026\n\n\nAn LLM User\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "posts/000_test_post/index.html#stories-from-data",
-    "href": "posts/000_test_post/index.html#stories-from-data",
-    "title": "A test post",
-    "section": "Stories from data",
-    "text": "Stories from data\n\nLet’s set up some data\n\n\nx = ['A', 'B', 'C']\ny = [1, 5, 3]\n\n\nNow let’s visualize it\n\nplt.bar(x, y)\nplt.show()"
+    "objectID": "posts/002_second_post/in_class_practice.html",
+    "href": "posts/002_second_post/in_class_practice.html",
+    "title": "Dataset of the Week, Glynn (DOWG)",
+    "section": "",
+    "text": "Important information:"
+  },
+  {
+    "objectID": "posts/001_first_post/renamed_post1.html",
+    "href": "posts/001_first_post/renamed_post1.html",
+    "title": "Testing, 123",
+    "section": "",
+    "text": "# ^ this is what you have to put at the beginning of every post (but be careful, because people can see commented cells)\n# be careful that the code cell is raw"
+  },
+  {
+    "objectID": "posts/001_first_post/renamed_post1.html#this-is-what-im-writing-for-content.",
+    "href": "posts/001_first_post/renamed_post1.html#this-is-what-im-writing-for-content.",
+    "title": "Testing, 123",
+    "section": "This is what I’m writing for content.",
+    "text": "This is what I’m writing for content.\nIt’s just practice, more to come!"
+  },
+  {
+    "objectID": "posts/004_DOW2/big5_blog.html",
+    "href": "posts/004_DOW2/big5_blog.html",
+    "title": "Introverts Online",
+    "section": "",
+    "text": "Personality tests can tell us whether people are more likely to do any number of things. People who identify as “thinkers” rather than feelers might be more likely to make pro-con lists for difficult decisions. “Perceivers” might be more likely than “judgers” to go on a spontaneous trip, or try new things. But is it fair to say that certain personality types reliably act in a certain way?\nIn this analysis, I investigate whether extroverts more active on social media.\nIn the Meyers’ Brigs (personality) Type Indicator (MBTI), Introversion (I) and Extroversion (E) define how people direct their energy and interact with the world. I expect that people who are more extroverted will be more likely to interact with others, even online! However the opposite may be true, that introverts prefer online interactions to in person interactions, and are therefore more likely to replace in-person conversations with social media ones.\nUnderstanding the likelihood that different personality types post on social media might tell us which of these hypotheses drive behavior for different kinds of people.\n\nimport pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom IPython.display import Markdown, display\n    #had to look this up\n\n\nsm = pd.read_csv('data/mbti.csv')\n\nFirst, I discovered how many people posting on social media are extroverts. After all, there’s a possibility that just by nature of being more social, they’re more likely to be incldued in the dataset. To identify this, I counted the number of people who identify as extroverted (“E” in the dataset) compared to the number of people who identify as introverted (“I” in the dataset).\n\n#split the type column into each of the identifiers\nsm['M'] = sm['type'].str[0]\nsm['B'] = sm['type'].str[1]\nsm['T'] = sm['type'].str[2]\nsm['I'] = sm['type'].str[3]\n\n#basic summary statistics for the numbers of each personality trait\nsm['M'].value_counts()\n\nM\nI    6676\nE    1999\nName: count, dtype: int64\n\n\n\nintrovert = sm['M'].value_counts().iloc[0]\nextrovert = sm['M'].value_counts().iloc[1]\n\n\nmkdwm_str = f'''\nSurprisingly, the number of introverts in the dataset **({introvert})** is far larger than the number of extroverts **({extrovert})**. \n\nTo see whether this kind of variation in personality traits was spread consistently across the dataset, or whether my sample might be skewed toward a certain personality, I plotted the frequency of different MBTI identifiers.\n'''\ndisplay(Markdown(mkdwm_str))\n\nSurprisingly, the number of introverts in the dataset (6676) is far larger than the number of extroverts (1999).\nTo see whether this kind of variation in personality traits was spread consistently across the dataset, or whether my sample might be skewed toward a certain personality, I plotted the frequency of different MBTI identifiers.\n\n\n\n#making a dataframe so I can plot the whole set of personality traits in the dataset\n    #I didn't realize until later that MBTI just stands for meyers briggs personality types, \n    #but these were still useful identifiers for the labels, which I made in this dictionary\ncounts = pd.DataFrame({\n    'Introversion/Extraversion ': sm['M'].value_counts(),\n    'Sensing/Intuition': sm['B'].value_counts(),\n    'Thinking/Feeling': sm['T'].value_counts(),\n    'Judging/Perceiving': sm['I'].value_counts()\n})\n\n#had to look up how to do this, because the pandas plot from the 03 slides for this week wasn't super customizable\n    #how I understand this is that fig changes the canvas size and ax manages the plot itself\n    #it's the same as saying: \n        # result = plt.subplots()\n        # fig = result[0]  # the figure\n        # ax = result[1]   # the axes\n    #which assigns a figure and axis so I can manage these separately\nfig, ax = plt.subplots(figsize=(10, 6))\ncounts.transpose().plot(kind='barh', ax=ax, width=.9) \nax.set_xlabel('Count', fontsize=12)\nax.set_ylabel('Dimension', fontsize=12)\nax.set_title('MBTI Personality Trait Distribution', fontsize=14)\nax.legend(title='Type')\nax.grid(axis='x', linestyle='--', alpha=0.7)\nplt.tight_layout() #had to look this up, but I still don't understand why my spacing is so strange\nplt.show()\n\n\n\n\n\n\n\n\nIt appears that much like the introversion/extroversion element of the Meyers Briggs personality type, there is a wide gap between respondents who identify as Intuitive vs. Sensing personality types. There are more similar distributions between the Judging/Perceivng and the Thinking/Feeling categories.\nTherefore, if we assume that our sample is representative of the entire population, the high number of introverts in out data might support the second hypotheses. Because introverts are less predisposed to social interactions, they are more likely to engage online. This may be a replacement of otherwise in-person conversations.\n\n\nAlthough more introverts in the sample supports the second hypothesis, this may also be a quirk of data collection. Perhaps the specific online forum of MBTI personalities is more likely to include introverts for some other systematic reason, unrelated to personality type.\nTo further test my hypotheses, I checked the length of posts for different personality types.\n\nsm['post_length'] = sm['posts'].str.len() #take the length\nsm[1:3]\n\n\n\n\n\n\n\n\nfilename\ntype\nposts\nM\nB\nT\nI\npost_length\n\n\n\n\n1\n1\nENTP\n'I'm finding the lack of me in these posts ver...\nE\nN\nT\nP\n7053\n\n\n2\n2\nINTP\n'Good one  _____   https://www.youtube.com/wat...\nI\nN\nT\nP\n5265\n\n\n3\n3\nINTJ\n'Dear INTP,   I enjoyed our conversation the o...\nI\nN\nT\nJ\n6271\n\n\n4\n4\nENTJ\n'You're fired.|||That's another silly misconce...\nE\nN\nT\nJ\n6111\n\n\n\n\n\n\n\n\n#take the mean of the I and E groups in the M column to see the average post length\nlen_by_ei = sm.groupby('M')['post_length'].mean()\nlen_by_ei\n\nM\nE    7198.235118\nI    7245.995057\nName: post_length, dtype: float64\n\n\n\nlen_by_ei['E'] &gt; len_by_ei['I'] #unclear why I couldn't use 1 and 0 here. Different data types? \n\nnp.False_\n\n\n\n(len_by_ei['E'] - len_by_ei['I']).round()\n\nnp.float64(-48.0)\n\n\nConsistent with my earlier findings, it seems like introverts are more active on social media than extroverts. On average, extroverts will use 48 less characters in a post than introverts."
+  },
+  {
+    "objectID": "posts/004_DOW2/big5_blog.html#is-there-a-difference-in-how-introverts-and-extroverts-engage-online",
+    "href": "posts/004_DOW2/big5_blog.html#is-there-a-difference-in-how-introverts-and-extroverts-engage-online",
+    "title": "Introverts Online",
+    "section": "",
+    "text": "Although more introverts in the sample supports the second hypothesis, this may also be a quirk of data collection. Perhaps the specific online forum of MBTI personalities is more likely to include introverts for some other systematic reason, unrelated to personality type.\nTo further test my hypotheses, I checked the length of posts for different personality types.\n\nsm['post_length'] = sm['posts'].str.len() #take the length\nsm[1:3]\n\n\n\n\n\n\n\n\nfilename\ntype\nposts\nM\nB\nT\nI\npost_length\n\n\n\n\n1\n1\nENTP\n'I'm finding the lack of me in these posts ver...\nE\nN\nT\nP\n7053\n\n\n2\n2\nINTP\n'Good one  _____   https://www.youtube.com/wat...\nI\nN\nT\nP\n5265\n\n\n3\n3\nINTJ\n'Dear INTP,   I enjoyed our conversation the o...\nI\nN\nT\nJ\n6271\n\n\n4\n4\nENTJ\n'You're fired.|||That's another silly misconce...\nE\nN\nT\nJ\n6111\n\n\n\n\n\n\n\n\n#take the mean of the I and E groups in the M column to see the average post length\nlen_by_ei = sm.groupby('M')['post_length'].mean()\nlen_by_ei\n\nM\nE    7198.235118\nI    7245.995057\nName: post_length, dtype: float64\n\n\n\nlen_by_ei['E'] &gt; len_by_ei['I'] #unclear why I couldn't use 1 and 0 here. Different data types? \n\nnp.False_\n\n\n\n(len_by_ei['E'] - len_by_ei['I']).round()\n\nnp.float64(-48.0)\n\n\nConsistent with my earlier findings, it seems like introverts are more active on social media than extroverts. On average, extroverts will use 48 less characters in a post than introverts."
   }
 ]
