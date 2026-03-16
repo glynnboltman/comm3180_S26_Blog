@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Glynn Boltman">
+<meta name="dcterms.date" content="2026-02-24">
+<meta name="description" content="Dataset of the Week 4: Crash Data">
+
+<title>Going (Abroad) for Gold? – Glynn Boltman, Comms Website</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-28ce2f92125236a284ff4f393e5b0d14.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Glynn Boltman, Comms Website</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../about.html"> 
+<span class="menu-text">Glynn Boltman, Comms Blog</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/glynnboltman/comm3180_S26_Blog"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Going (Abroad) for Gold?</h1>
+                  <div>
+        <div class="description">
+          Dataset of the Week 4: Crash Data
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">coursework</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Glynn Boltman </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">February 24, 2026</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<section id="football-fatalities" class="level1">
+<h1>Football Fatalities</h1>
+<p>Philadelphians take their football seriously, and given that major sporting events have resulted in riots. The question emerges whether the Philadelphia Eagles are a flight risk.</p>
+<p>Using Pennsylvania Department of Transportation crash records spanning 2005 to 2024, I set out to explore whether famous Philadelphia Eagles game months are actually more dangerous to be on the road in Philadelphia. The short answer: kind of. The more interesting answer is where.</p>
+<div id="49594a44-034e-446f-830b-9917e3fc2db6" class="cell" data-execution_count="190">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> geopandas <span class="im">as</span> gpd</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="7c4abb81-3adc-4c3d-b8d0-6505a3dbe127" class="cell" data-execution_count="202">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>crash <span class="op">=</span> pd.read_csv(<span class="st">'data/cleaned_crash_data.csv'</span>, low_memory<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">#just keep athlete ID, name, born_country, lat and long</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#zips = pd.read_csv('data/philadelphia_zip_boundaries.geojson')</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>zip_gpd<span class="op">=</span>gpd.read_file(<span class="st">'data/Zipcodes_Poly.geojson'</span>).to_crs(crs<span class="op">=</span><span class="dv">4326</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">#crashes during major sporting events</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="co">#when do they happen- make a timeline with major sporting events in dotted lines-- </span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>            <span class="co">#colors for diff philly sports teams? and a barplot or other way of visualizing frequency of crashes</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="co">#where do they happen: closer to the stadiums in south philly, presumably</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>The dataset covers every recorded crash in Pennsylvania over nearly two decades, including exact coordinates, injury counts, and fatalities. To focus the analysis, I filtered down to football season — September through February — and matched each crash to a Philadelphia zip code using geographic boundary files. The result was a month-by-month picture of road danger across the city.</p>
+<div id="585b9618-9295-42b3-9583-9c8b5c016fd1" class="cell" data-execution_count="198">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#summary and keeping columns I want</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>crash <span class="op">=</span> crash[[<span class="st">'DEC_LATITUDE'</span>, <span class="st">'DEC_LONGITUDE'</span>, <span class="st">'CRASH_MONTH'</span>, <span class="st">'CRASH_YEAR'</span>, <span class="st">'FATAL_COUNT'</span>, <span class="st">'TOT_INJ_COUNT'</span>]]</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># KEEPING CRASH LOCATION, DATES, AND THE NUMBER OF SERIOUS INJURIES AND DEATHS THE DATASET</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#find the average number of car crashes for a given year and month</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>crash.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="198">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">DEC_LATITUDE</th>
+<th data-quarto-table-cell-role="th">DEC_LONGITUDE</th>
+<th data-quarto-table-cell-role="th">CRASH_MONTH</th>
+<th data-quarto-table-cell-role="th">CRASH_YEAR</th>
+<th data-quarto-table-cell-role="th">FATAL_COUNT</th>
+<th data-quarto-table-cell-role="th">TOT_INJ_COUNT</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>40.428007</td>
+<td>-75.080509</td>
+<td>1</td>
+<td>2005</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>40.101623</td>
+<td>-75.229772</td>
+<td>1</td>
+<td>2005</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>40.070757</td>
+<td>-75.106579</td>
+<td>1</td>
+<td>2005</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>40.442375</td>
+<td>-75.348946</td>
+<td>1</td>
+<td>2005</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>NaN</td>
+<td>NaN</td>
+<td>1</td>
+<td>2005</td>
+<td>0</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div id="898d236e-baef-4973-b6b3-f0e8d3af5064" class="cell" data-execution_count="199">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#subset to football season (with a month of padding on either side)</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>football_months <span class="op">=</span> [<span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">1</span>, <span class="dv">2</span>]</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>crash <span class="op">=</span> crash[crash[<span class="st">'CRASH_MONTH'</span>].isin(football_months)]</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="aba59690-4a9e-40c7-9e22-d5eff413ec41" class="cell" data-execution_count="200">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#crash.to_csv('cleaned_crash_data.csv', index = False)</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#github said the crash data was too large so I had to make a smaller version to get the file to push</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="a0849eea-6841-489a-86c3-43a9b269333b" class="cell" data-execution_count="168">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#creating a mapable datset</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>crash <span class="op">=</span> gpd.GeoDataFrame(crash, geometry<span class="op">=</span>gpd.points_from_xy(x<span class="op">=</span>crash[<span class="st">'DEC_LONGITUDE'</span>], y<span class="op">=</span>crash[<span class="st">'DEC_LATITUDE'</span>]))</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>crash <span class="op">=</span> crash_map.set_crs(crs<span class="op">=</span><span class="dv">4326</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>crash.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="168">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">DEC_LATITUDE</th>
+<th data-quarto-table-cell-role="th">DEC_LONGITUDE</th>
+<th data-quarto-table-cell-role="th">CRASH_MONTH</th>
+<th data-quarto-table-cell-role="th">CRASH_YEAR</th>
+<th data-quarto-table-cell-role="th">FATAL_COUNT</th>
+<th data-quarto-table-cell-role="th">TOT_INJ_COUNT</th>
+<th data-quarto-table-cell-role="th">geometry</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>40.428007</td>
+<td>-75.080509</td>
+<td>1</td>
+<td>2005</td>
+<td>0</td>
+<td>0</td>
+<td>POINT (-75.08051 40.42801)</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>40.101623</td>
+<td>-75.229772</td>
+<td>1</td>
+<td>2005</td>
+<td>0</td>
+<td>0</td>
+<td>POINT (-75.22977 40.10162)</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>40.070757</td>
+<td>-75.106579</td>
+<td>1</td>
+<td>2005</td>
+<td>0</td>
+<td>0</td>
+<td>POINT (-75.10658 40.07076)</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>40.442375</td>
+<td>-75.348946</td>
+<td>1</td>
+<td>2005</td>
+<td>1</td>
+<td>1</td>
+<td>POINT (-75.34895 40.44238)</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>NaN</td>
+<td>NaN</td>
+<td>1</td>
+<td>2005</td>
+<td>0</td>
+<td>1</td>
+<td>POINT (NaN NaN)</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div id="6f74bb00-aac2-4619-8e66-54ce7f36809b" class="cell" data-execution_count="169">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#find the average number of car crashes for a given year and month</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#create a date on the 1st of each month</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>crash[<span class="st">'day'</span>] <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">#because I'm assigning every day 1, grouping by month and year should aggregate my data by month and year </span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>crash[<span class="st">'date'</span>] <span class="op">=</span> pd.to_datetime(crash[[<span class="st">'CRASH_YEAR'</span>, <span class="st">'CRASH_MONTH'</span>]].assign(day<span class="op">=</span><span class="dv">1</span>).rename(columns<span class="op">=</span>{<span class="st">'CRASH_YEAR'</span>: <span class="st">'year'</span>, <span class="st">'CRASH_MONTH'</span>: <span class="st">'month'</span>}))</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">#I struggled converting to datetime so had to troubleshoot errors, which led me to the renaming columns approach</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="ebb64af1-883f-4ca8-ad11-637a48b81c80" class="cell" data-execution_count="170">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#join crash points to zip code polygons</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>zcrash <span class="op">=</span> gpd.sjoin(crash, zip_gpd, how<span class="op">=</span><span class="st">'left'</span>, predicate<span class="op">=</span><span class="st">'within'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="170">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">DEC_LATITUDE</th>
+<th data-quarto-table-cell-role="th">DEC_LONGITUDE</th>
+<th data-quarto-table-cell-role="th">CRASH_MONTH</th>
+<th data-quarto-table-cell-role="th">CRASH_YEAR</th>
+<th data-quarto-table-cell-role="th">FATAL_COUNT</th>
+<th data-quarto-table-cell-role="th">TOT_INJ_COUNT</th>
+<th data-quarto-table-cell-role="th">geometry</th>
+<th data-quarto-table-cell-role="th">day</th>
+<th data-quarto-table-cell-role="th">date</th>
+<th data-quarto-table-cell-role="th">index_right</th>
+<th data-quarto-table-cell-role="th">OBJECTID</th>
+<th data-quarto-table-cell-role="th">CODE</th>
+<th data-quarto-table-cell-role="th">COD</th>
+<th data-quarto-table-cell-role="th">Shape__Area</th>
+<th data-quarto-table-cell-role="th">Shape__Length</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>40.428007</td>
+<td>-75.080509</td>
+<td>1</td>
+<td>2005</td>
+<td>0</td>
+<td>0</td>
+<td>POINT (-75.08051 40.42801)</td>
+<td>1</td>
+<td>2005-01-01</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>40.101623</td>
+<td>-75.229772</td>
+<td>1</td>
+<td>2005</td>
+<td>0</td>
+<td>0</td>
+<td>POINT (-75.22977 40.10162)</td>
+<td>1</td>
+<td>2005-01-01</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>40.070757</td>
+<td>-75.106579</td>
+<td>1</td>
+<td>2005</td>
+<td>0</td>
+<td>0</td>
+<td>POINT (-75.10658 40.07076)</td>
+<td>1</td>
+<td>2005-01-01</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>40.442375</td>
+<td>-75.348946</td>
+<td>1</td>
+<td>2005</td>
+<td>1</td>
+<td>1</td>
+<td>POINT (-75.34895 40.44238)</td>
+<td>1</td>
+<td>2005-01-01</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>NaN</td>
+<td>NaN</td>
+<td>1</td>
+<td>2005</td>
+<td>0</td>
+<td>1</td>
+<td>POINT (NaN NaN)</td>
+<td>1</td>
+<td>2005-01-01</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div id="accd8309-59ec-4817-84eb-914ab0e5ef53" class="cell" data-execution_count="171">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># grouping by date and zip code so that I can find the average crashes in a zip for certain months/days</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>zcrash <span class="op">=</span> zcrash.groupby([<span class="st">'date'</span>, <span class="st">'CODE'</span>]).aggregate(</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    fatalities <span class="op">=</span> (<span class="st">'FATAL_COUNT'</span>, <span class="st">'sum'</span>),</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    injuries <span class="op">=</span> (<span class="st">'TOT_INJ_COUNT'</span>, <span class="st">'sum'</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>).reset_index()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="171">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">date</th>
+<th data-quarto-table-cell-role="th">CODE</th>
+<th data-quarto-table-cell-role="th">fatalities</th>
+<th data-quarto-table-cell-role="th">injuries</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>2005-01-01</td>
+<td>19102</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>2005-01-01</td>
+<td>19103</td>
+<td>0</td>
+<td>7</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>2005-01-01</td>
+<td>19104</td>
+<td>0</td>
+<td>44</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>2005-01-01</td>
+<td>19106</td>
+<td>0</td>
+<td>6</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>2005-01-01</td>
+<td>19107</td>
+<td>0</td>
+<td>14</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">...</th>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">11109</th>
+<td>2024-12-01</td>
+<td>19150</td>
+<td>0</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">11110</th>
+<td>2024-12-01</td>
+<td>19151</td>
+<td>0</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">11111</th>
+<td>2024-12-01</td>
+<td>19152</td>
+<td>0</td>
+<td>8</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">11112</th>
+<td>2024-12-01</td>
+<td>19153</td>
+<td>0</td>
+<td>13</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">11113</th>
+<td>2024-12-01</td>
+<td>19154</td>
+<td>1</td>
+<td>21</td>
+</tr>
+</tbody>
+</table>
+
+<p>11114 rows × 4 columns</p>
+</div>
+</div>
+</div>
+<div id="f9c2e2f0-05c0-410b-87e3-80fcb77adf1f" class="cell" data-execution_count="172">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#count the injuries and fatalities for each day to compare with dates of eagles games</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>crash_ag <span class="op">=</span> crash.groupby(<span class="st">'date'</span>).aggregate(fatalities <span class="op">=</span> (<span class="st">'FATAL_COUNT'</span>, <span class="st">'sum'</span>), injuries <span class="op">=</span> (<span class="st">'TOT_INJ_COUNT'</span>, <span class="st">'sum'</span>))</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>avg_fat <span class="op">=</span> crash_ag[<span class="st">'fatalities'</span>].mean()</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>avg_inj <span class="op">=</span> crash_ag[<span class="st">'injuries'</span>].mean()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>To identify “important” Eagles games, I compiled a list of notable matchups — playoff runs, blowout wins, historic moments — and flagged the months in which they occurred. These are the green bars in the charts below.</p>
+<div id="bea4f6d4-9cb6-4fd1-8c4d-05be807f4f07" class="cell" data-execution_count="173">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#keep only important dates for the eagles over the course of the dataset</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>eagles_games <span class="op">=</span> { <span class="co">#I found an article that had the dates of major eagles games online, and I asked chatgpt to turn the text into a data dictionary</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">#I then madea all the days in the set equal to 1, because my crash data is generalized to month</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'2005-01-01'</span>: <span class="st">'NFC Championship: Eagles 27, Falcons 10'</span>,</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'2006-01-01'</span>: <span class="st">'Wild Card: Eagles 23, Giants 20 (OT)'</span>,</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'2008-12-01'</span>: <span class="st">'Week 17: Eagles 44, Cowboys 6'</span>,</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'2011-01-01'</span>: <span class="st">'Wild Card: Packers 21, Eagles 16'</span>,</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'2013-09-01'</span>: <span class="st">'Week 1: Eagles 33, Redskins 27 (Chip Kelly debut)'</span>,</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">'2013-12-01'</span>: <span class="st">'Week 16: Eagles 54, Bears 11'</span>,</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">'2017-09-01'</span>: <span class="st">'Week 2: Eagles 20, Chiefs 17'</span>,</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">'2017-10-01'</span>: <span class="st">'Week 8: Eagles 33, 49ers 10'</span>,</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">'2018-01-01'</span>: <span class="st">'Divisional: Eagles 15, Falcons 10'</span>,</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">'2018-01-01'</span>: <span class="st">'NFC Championship: Eagles 38, Vikings 7'</span>,</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">'2018-09-01'</span>: <span class="st">'Week 1: Eagles 18, Falcons 12 (Super Bowl celebration)'</span>,</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">'2022-09-01'</span>: <span class="st">'Week 2: Eagles 24, Vikings 7 (MNF)'</span>,</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">'2022-10-01'</span>: <span class="st">'Week 4: Eagles 29, Jaguars 21'</span>,</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">'2023-01-01'</span>: <span class="st">'NFC Championship: Eagles 31, 49ers 7'</span>,</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">'2023-12-01'</span>: <span class="st">'Week 16: Eagles 33, Giants 25 (Christmas)'</span>,</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">'2026-01-01'</span>: <span class="st">'Wild Card: Eagles vs 49ers (Barkley dominates)'</span></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="dd9aedc1-e7df-45cf-b7a7-0dcf3a5db4d4" class="cell" data-execution_count="174">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#taking the eagles dataset and converting to datetime so it's comprable to my existing dataset</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>eagles_dates <span class="op">=</span> pd.to_datetime(<span class="bu">list</span>(eagles_games.keys()))</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create colors: green if date matches an Eagles game month, grey otherwise</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> [<span class="st">'green'</span> <span class="cf">if</span> date <span class="kw">in</span> eagles_dates <span class="cf">else</span> <span class="st">'grey'</span> <span class="cf">for</span> date <span class="kw">in</span> crash_ag.index] <span class="co">#looked this up</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co">#making sur ethat things are in datetime format so the code doesn't give me an error when I'm plotting: </span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>eagles_dates <span class="op">=</span> pd.to_datetime(<span class="bu">list</span>(eagles_games.keys()))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Looking at monthly fatalities over the full dataset, the signal is noisy. Fatal crashes are relatively rare events, and the average hovers around 22 per month during football season. Some Eagles game months spike above that average — and some don’t. It’s hard to draw a clean line.</p>
+<div id="0260d0d3-497f-4677-a9ae-ab9323381078" class="cell" data-execution_count="175">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#making a fatalities plot</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">14</span>, <span class="dv">5</span>))</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="bu">range</span>(<span class="bu">len</span>(crash_ag))</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>ax.bar(x, crash_ag[<span class="st">'fatalities'</span>], color<span class="op">=</span>colors, width<span class="op">=</span><span class="fl">0.8</span>)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Set x-tick labels (show every nth label to avoid crowding-- looked this up)</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">6</span>  <span class="co"># show every 6th label</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>ax.set_xticks(x[::n])</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>ax.set_xticklabels([<span class="bu">str</span>(d.date()) <span class="cf">for</span> d <span class="kw">in</span> crash_ag.index[::n]], rotation<span class="op">=</span><span class="dv">45</span>, ha<span class="op">=</span><span class="st">'right'</span>)</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="co">#line to indicate average fatalities</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>ax.axhline(y<span class="op">=</span>avg_fat, linestyle<span class="op">=</span><span class="st">'dotted'</span>, color<span class="op">=</span><span class="st">'red'</span>, label<span class="op">=</span><span class="ss">f'Avg: </span><span class="sc">{</span>avg_fat<span class="sc">:.1f}</span><span class="ss">'</span>)</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Date'</span>)</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Fatalities'</span>)</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Monthly Fatalities From Car Crashes (Green = Important Eagles Game Month)'</span>)</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>ax.legend()</span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="crash_blog_files/figure-html/cell-14-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The injuries chart tells a more consistent story. With an average of around 2,200 injuries per football-season month, several of the green-highlighted Eagles months cluster toward the higher end of the distribution. Again, it’s not a perfect pattern — plenty of non-Eagles months are bad too — but the visual suggests that the months surrounding major games are at least not safer.</p>
+<div id="e3228b24-d9ac-47fb-871c-b1b6e757ed25" class="cell" data-execution_count="176">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">14</span>, <span class="dv">5</span>))</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="bu">range</span>(<span class="bu">len</span>(crash_ag))</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>ax.bar(x, crash_ag[<span class="st">'injuries'</span>], color<span class="op">=</span>colors, width<span class="op">=</span><span class="fl">0.8</span>)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Set x-tick labels (show every nth label to avoid crowding-- looked this up)</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">6</span>  <span class="co"># show every 6th label</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>ax.set_xticks(x[::n])</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>ax.set_xticklabels([<span class="bu">str</span>(d.date()) <span class="cf">for</span> d <span class="kw">in</span> crash_ag.index[::n]], rotation<span class="op">=</span><span class="dv">45</span>, ha<span class="op">=</span><span class="st">'right'</span>)</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="co">#line to indicate average fatalities</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>ax.axhline(y<span class="op">=</span>avg_inj, linestyle<span class="op">=</span><span class="st">'dotted'</span>, color<span class="op">=</span><span class="st">'red'</span>, label<span class="op">=</span><span class="ss">f'Average football : </span><span class="sc">{</span>avg_inj<span class="sc">:.1f}</span><span class="ss">'</span>)</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Date'</span>)</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Fatalities'</span>)</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Monthly Injuries From Car Crashes (Green = Important Eagles Game Month)'</span>)</span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>ax.legend()</span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="crash_blog_files/figure-html/cell-15-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="dc5e0cab-8f41-46e8-b537-07dfcb5b5587" class="cell" data-execution_count="183">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#graphing where in philly car crashes happen on important eagles game nights</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co">#making a dataset of only crash dates</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>zcrash_eagles <span class="op">=</span> zcrash[zcrash[<span class="st">'date'</span>].isin(eagles_dates)]</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="co"># # Then aggregate by zip</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="co"># eagles_by_zip = zcrash_eagles.groupby('CODE').aggregate(</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="co">#     fatalities = ('FATAL_COUNT', 'sum'),</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="co">#     injuries = ('TOT_INJ_COUNT', 'sum')</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="co"># ).reset_index()</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="co"># merge with the zip code dataset</span></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>zip_eagles <span class="op">=</span> zip_gpd.merge(zcrash_eagles, on<span class="op">=</span><span class="st">'CODE'</span>, how<span class="op">=</span><span class="st">'left'</span>)</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>zip_eagles[<span class="st">'fatalities'</span>] <span class="op">=</span> zip_eagles[<span class="st">'fatalities'</span>].fillna(<span class="dv">0</span>)</span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a><span class="co">#plot</span></span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>zip_eagles.plot(column<span class="op">=</span><span class="st">'fatalities'</span>, legend<span class="op">=</span><span class="va">True</span>, cmap<span class="op">=</span><span class="st">'Reds'</span>, edgecolor<span class="op">=</span><span class="st">'#707070'</span>, figsize<span class="op">=</span>(<span class="dv">12</span>,<span class="dv">10</span>))</span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Fatalities by Zip Code on Eagles Game Months'</span>)</span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">'off'</span>)</span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="crash_blog_files/figure-html/cell-16-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Mapping fatalities by zip code during Eagles game months, one neighborhood stands out clearly in the west of the city — a deep red patch in what appears to be the Cobbs Creek or Kingsessing area. This is notably not South Philadelphia, where Lincoln Financial Field sits, which might seem counterintuitive. But it suggests that the danger isn’t concentrated around the stadium itself — it’s spread across the city, and particularly into neighborhoods that may have less infrastructure or more late-night driving activity.</p>
+<p>zip_eagles.plot(column=‘injuries’, legend=True, cmap=‘Reds’, edgecolor=‘#707070’, figsize=(12,10)) plt.title(‘Injuries by Zip Code on Eagles Game Months’) plt.axis(‘off’) plt.show()</p>
+<p>The injuries map broadens that picture considerably. West and Northeast Philadelphia both show up as hotspots, with a wide swath of the city seeing elevated injury counts. The injury distribution is more diffuse than the fatality map, which makes sense — injuries from crashes are far more common than fatalities, so the geographic spread is wider and the variation across neighborhoods is more pronounced.</p>
+</section>
+<section id="conclusion" class="level1">
+<h1>Conclusion</h1>
+<p>To be fair about what this analysis can and can’t say: the data is aggregated by month, not by game day. That means we can’t isolate the specific hours after a final whistle — just the calendar month in which a major game happened to fall. A lot of other things happen in January and December that could also drive crash rates up, from holiday drinking to bad weather.</p>
+<p>Still, as a first pass, the pattern is suggestive enough to be worth investigating further. Philadelphia’s most passionate sports city has some of the most chaotic roads in the country — and if the Eagles are at least partially responsible for that, the data is starting to make the case.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/glynnboltman\.github\.io\/comm3180_S26_Blog\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

@@ -2,6 +2,9 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/006_DOW4/08_DOW4_and_Geolocated_data_with_GeoPandas/02_Working_with_geopandas_part1.html",
+      "/posts/006_DOW4/08_DOW4_and_Geolocated_data_with_GeoPandas/01_Exploring_PDOT_Crash_Data.html",
+      "/posts/006_DOW4/08_DOW4_and_Geolocated_data_with_GeoPandas/crash_blog.html",
       "/posts/005_DOW3/olympic_blog.html",
       "/posts/003_DOW1_5b/groundhog_blog.html",
       "/posts/004_DOW2/big5_blog.html",
