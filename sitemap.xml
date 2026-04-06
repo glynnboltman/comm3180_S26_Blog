@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://glynnboltman.github.io/comm3180_S26_Blog/about.html</loc>
-    <lastmod>2026-03-16T17:45:39.799Z</lastmod>
-  </url>
-  <url>
     <loc>https://glynnboltman.github.io/comm3180_S26_Blog/posts/003_DOW1_5b/groundhog_blog.html</loc>
-    <lastmod>2026-03-16T17:45:39.801Z</lastmod>
-  </url>
-  <url>
-    <loc>https://glynnboltman.github.io/comm3180_S26_Blog/index.html</loc>
-    <lastmod>2026-03-16T17:45:39.799Z</lastmod>
-  </url>
-  <url>
-    <loc>https://glynnboltman.github.io/comm3180_S26_Blog/posts/002_second_post/in_class_practice.html</loc>
-    <lastmod>2026-03-16T17:45:39.799Z</lastmod>
-  </url>
-  <url>
-    <loc>https://glynnboltman.github.io/comm3180_S26_Blog/posts/006_DOW4/08_DOW4_and_Geolocated_data_with_GeoPandas/crash_blog.html</loc>
-    <lastmod>2026-03-16T17:45:40.283Z</lastmod>
+    <lastmod>2026-04-06T23:40:09.306Z</lastmod>
   </url>
   <url>
     <loc>https://glynnboltman.github.io/comm3180_S26_Blog/posts/005_DOW3/olympic_blog.html</loc>
-    <lastmod>2026-03-16T17:45:40.275Z</lastmod>
+    <lastmod>2026-04-06T23:40:09.804Z</lastmod>
+  </url>
+  <url>
+    <loc>https://glynnboltman.github.io/comm3180_S26_Blog/posts/002_second_post/in_class_practice.html</loc>
+    <lastmod>2026-04-06T23:40:09.305Z</lastmod>
+  </url>
+  <url>
+    <loc>https://glynnboltman.github.io/comm3180_S26_Blog/about.html</loc>
+    <lastmod>2026-04-06T23:40:09.304Z</lastmod>
+  </url>
+  <url>
+    <loc>https://glynnboltman.github.io/comm3180_S26_Blog/index.html</loc>
+    <lastmod>2026-04-06T23:40:09.304Z</lastmod>
+  </url>
+  <url>
+    <loc>https://glynnboltman.github.io/comm3180_S26_Blog/posts/006_DOW4/08_DOW4_and_Geolocated_data_with_GeoPandas/crash_blog.html</loc>
+    <lastmod>2026-04-06T23:40:09.812Z</lastmod>
   </url>
   <url>
     <loc>https://glynnboltman.github.io/comm3180_S26_Blog/posts/004_DOW2/big5_blog.html</loc>
-    <lastmod>2026-03-16T17:45:39.814Z</lastmod>
+    <lastmod>2026-04-06T23:40:09.320Z</lastmod>
   </url>
 </urlset>
