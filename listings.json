@@ -2,8 +2,13 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/007_DOW5/10b_DOW5/02_More_plotting_in_Python.html",
+      "/posts/007_DOW5/10b_DOW5/01_Contextualizing_numbers_and_data.html",
+      "/posts/007_DOW5/10b_DOW5/03_openphilly_shootings_data_analysis.html",
+      "/posts/008_DOW6/08_DOW4_and_Geolocated_data_with_GeoPandas/crash_blog.html",
       "/posts/006_DOW4/08_DOW4_and_Geolocated_data_with_GeoPandas/crash_blog.html",
       "/posts/005_DOW3/olympic_blog.html",
+      "/posts/007_DOW5/10b_DOW5/shootings_blog.html",
       "/posts/004_DOW2/big5_blog.html",
       "/posts/003_DOW1_5b/groundhog_blog.html",
       "/posts/002_second_post/in_class_practice.html"
