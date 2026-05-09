@@ -197,8 +197,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<p>[insert introduction here]</p>
-<div id="49594a44-034e-446f-830b-9917e3fc2db6" class="cell" data-execution_count="2">
+<p>Philadelphia has a reputation for being one of the most violent cities. “In West Philadelphia born and raised,” starts the Fresh Prince of Bel-Air, before explaining why he left the city. However, for people living in the city, it’s clear that violence is stratified to a few different neighborhoods.</p>
+<p>In this analysis, I explore the intersection between crime reporting, the rates at which people call 911, and shootings. Who calls for help, and from where, may reval something deeper about how communities relate to the institutions meant to protect them.</p>
+<p>This analysis combines two datasets from OpenDataPhilly: a record of every shooting in Philly in 2024 and a hexagonal grid of 911 calls made to the Philadelphia Fire and Police Departments in that year. Together, they might answer whether the places with more gun violence are also more likely to make more emergency calls.</p>
+<div id="49594a44-034e-446f-830b-9917e3fc2db6" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -207,17 +209,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> warnings</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>warnings.simplefilter(<span class="st">'ignore'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="8ff820e5-d57e-47ca-9b74-eb3f4f1e0179" class="cell" data-execution_count="17">
+<div id="8ff820e5-d57e-47ca-9b74-eb3f4f1e0179" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>metadata <span class="op">=</span> pd.read_csv(<span class="st">'data/shootings_metadata_fields.csv'</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>calls <span class="op">=</span> pd.read_csv(<span class="st">'data/hex_911_calls.csv'</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>calls_json <span class="op">=</span> gpd.read_file(<span class="st">'data/hex_911_calls.geojson'</span>)</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>ppd_dist_gdf <span class="op">=</span> gpd.read_file(<span class="st">'data/Boundaries_District.geojson'</span>)</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>hexes <span class="op">=</span> gpd.read_file(<span class="st">'data/h3_hex_grid_r8.geojson'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="50e569a8-57fd-4255-9936-ba3ac2b04a11" class="cell" data-execution_count="4">
+<div id="50e569a8-57fd-4255-9936-ba3ac2b04a11" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>shootings <span class="op">=</span> pd.read_csv(<span class="st">'data/shootings.csv'</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>shootings.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="4">
+<div class="cell-output cell-output-display" data-execution_count="7">
 <div>
 
 
@@ -376,19 +378,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="247ee8c5-e1d7-46c0-a7ea-c54fc2c84fd4" class="cell" data-execution_count="5">
+<div id="247ee8c5-e1d7-46c0-a7ea-c54fc2c84fd4" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>shootings.columns</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(shootings)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>shootings[<span class="st">'year'</span>].<span class="bu">max</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
+<div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>np.int64(2026)</code></pre>
 </div>
 </div>
 <p>Each row of the Philly Shootings Dataset the dataset seems to correspond to an individual shooting, including location data, the date and time, demographic data about the shooter, and whether the shooting was fatal.</p>
 <p>In addition to this dataset, Open Data Philly also has a dataset of 911 calls in Philadelphia which we can use to contextualize the shooting data. This includes all emergency calls made to the Philadelphia Fire and Police Departments in 2024.</p>
-<div id="714ed0bf-e299-40e1-8b5c-fbfbd45acff7" class="cell" data-execution_count="6">
+<div id="714ed0bf-e299-40e1-8b5c-fbfbd45acff7" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>calls.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="6">
+<div class="cell-output cell-output-display" data-execution_count="9">
 <div>
 
 
@@ -468,9 +470,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="495c103a-5075-442d-b83f-3707135f06e2" class="cell" data-execution_count="7">
+<div id="495c103a-5075-442d-b83f-3707135f06e2" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>calls.columns</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
+<div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>Index(['total_calls', 'high_priority', 'medium_priority', 'low_priority',
        'gridid', 'objectid', 'Shape__Area', 'Shape__Length'],
       dtype='str')</code></pre>
@@ -481,16 +483,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The combination of these two datasets allows us to investigate this relationship in Philadelphia. Is there a conection between the number of emergency calls made to an area and the number of shootings that happen in that area? Does this change for high, medium, and low priority calls? What about for different racial and demographic groups experiencing gun violence? What does this tell us about the relationship between gun violence and different crime reporting patterns?</p>
 <section id="is-there-a-conection-between-the-number-of-emergency-calls-made-to-an-area-and-the-number-of-shootings-that-happen-in-that-area" class="level2">
 <h2 class="anchored" data-anchor-id="is-there-a-conection-between-the-number-of-emergency-calls-made-to-an-area-and-the-number-of-shootings-that-happen-in-that-area">Is there a conection between the number of emergency calls made to an area and the number of shootings that happen in that area?</h2>
-<div id="d67e1ec0-fa0d-44b2-ad1b-d0ae9d9433ed" class="cell" data-scrolled="true" data-execution_count="8">
+<div id="d67e1ec0-fa0d-44b2-ad1b-d0ae9d9433ed" class="cell" data-scrolled="true" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># first determine how many shootings there were in 2024</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>filt <span class="op">=</span> shootings[<span class="st">'year'</span>] <span class="op">==</span> <span class="dv">2024</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>shootings <span class="op">=</span> shootings[filt]</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(shootings)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="8">
+<div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>1112</code></pre>
 </div>
 </div>
-<div id="3ef29aae-b260-47d9-8269-c6fba6c6de1b" class="cell" data-execution_count="9">
+<div id="3ef29aae-b260-47d9-8269-c6fba6c6de1b" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(shootings[shootings[<span class="st">'fatal'</span>]<span class="op">==</span><span class="dv">1</span>])</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>shootings.info()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -529,7 +531,7 @@ memory usage: 390.2 KB</code></pre>
 </div>
 </div>
 <p>There are 1,112 entries for the shootings dataset in 2024, and 228 of those shootings were fatal.</p>
-<div id="c042bdd0-52a4-4bc6-b41e-78a9ce57c7c2" class="cell" data-execution_count="10">
+<div id="c042bdd0-52a4-4bc6-b41e-78a9ce57c7c2" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#plotting the shootings data based on </span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>geom<span class="op">=</span> gpd.points_from_xy(shootings[<span class="st">'point_x'</span>],</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>                  shootings[<span class="st">'point_y'</span>])</span>
@@ -554,13 +556,13 @@ memory usage: 390.2 KB</code></pre>
 </div>
 <p>The plot demonstrates that shootings in Philadelphia seem to be concentrated in North and West Philadelphia. Theree are significant numbers of fatal shootings by Kensington, and concentrated around Leigh Avenue in North Philly, as well as in far West Philadelphia, concentrated along Market and 60th street. It is notable that these neighborhoods tend to be significantly lower socioeconomic status than center city, and the farthest North and East suburbs of the city.</p>
 <p>This graph is useful at establishing a baseline for where gun violence is most likely to occur in Philadelphia, so that we can better understand the connection between geography, violence, and emergency call data.</p>
-<div id="e6f0df49-85bc-4ee1-af58-40af5f10734d" class="cell" data-execution_count="11">
+<div id="e6f0df49-85bc-4ee1-af58-40af5f10734d" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#plotting the emergency call data: </span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>calls_json[<span class="st">'centX'</span>]<span class="op">=</span> calls_json.centroid.x</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>calls_json[<span class="st">'centY'</span>]<span class="op">=</span> calls_json.centroid.y</span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>calls_json.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="11">
+<div class="cell-output cell-output-display" data-execution_count="14">
 <div>
 
 
@@ -658,13 +660,13 @@ memory usage: 390.2 KB</code></pre>
 </div>
 </div>
 </div>
-<div id="8efdcd30-dc62-4fd2-8796-3e663e3f0e14" class="cell" data-execution_count="16">
+<div id="8efdcd30-dc62-4fd2-8796-3e663e3f0e14" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>calls[<span class="st">'objectid'</span>].<span class="bu">max</span>() <span class="co">#number of hexagons plotted</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="16">
+<div class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>np.int64(579)</code></pre>
 </div>
 </div>
-<div id="10e0540f-94e4-4c61-be9e-a533d61e1eff" class="cell">
+<div id="10e0540f-94e4-4c61-be9e-a533d61e1eff" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">#calls_json.plot(color='white', edgecolor='gray', figsize=(10,10))</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co"># calls_json.apply(lambda r: plt.text(r['centX'], r['centY'], r['objectid']),axis=1) #this is pretty gross when plotted, so omitted for clarity's sake. </span></span>
@@ -679,10 +681,17 @@ memory usage: 390.2 KB</code></pre>
 <span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Latitude'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
 <span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="shootings_blog_files/figure-html/cell-13-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
 </div>
 <p>Although this graph is somewhat helpful in allowing us to look at the concentration of 911 cals across Philadelphia, demonstrating that there are clearly regions of the city which are much more likely to experience 911 calls, it is difficult to contextualize the location of the shootings without understanding how the hexagons align with different district boundaries in Philadelphia.</p>
 <p>In that case, it might be helpful to overlay 911 calls and district data so we can undertsand where these calls are made most frequently.</p>
-<div id="e60ffca0-f7ab-4ded-a598-c880ba8013c5" class="cell">
+<div id="e60ffca0-f7ab-4ded-a598-c880ba8013c5" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize <span class="op">=</span> (<span class="dv">10</span>,<span class="dv">10</span>))</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>calls_json.plot(edgecolor<span class="op">=</span><span class="st">'gray'</span>, column<span class="op">=</span><span class="st">'total_calls'</span>, ax <span class="op">=</span> ax, </span>
@@ -695,6 +704,13 @@ memory usage: 390.2 KB</code></pre>
 <span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Latitude'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
 <span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="shootings_blog_files/figure-html/cell-14-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
 </div>
 <p>From this graph, we can better see that emergency calls seem to be concentrated in North and West Philadelphia, much like the shooting dataset however the graph also seems to have a high number of calls from the neighborhoods by center city. The suburban neighborhoods in the far north of the city seem to have significantly lower volumes of emergency calls.</p>
 <p>This is a strange finding based on the shooting data visualization. In this earlier graph, we noticed that calls were more likely to be concentrated further North, and there were very few datapoints for center city. It’s possible that there is a disconnect between the amount of emergency calls that an area receives, and the amount of gun violence in that area. We should be cautious not to conclude that just because an area is more likely to make calls to 911, they are more likely to be experiencing violent crime.</p>
@@ -703,7 +719,7 @@ memory usage: 390.2 KB</code></pre>
 <section id="does-this-change-for-high-medium-and-low-priority-calls" class="level2">
 <h2 class="anchored" data-anchor-id="does-this-change-for-high-medium-and-low-priority-calls">Does this change for high, medium, and low priority calls?</h2>
 <p>One way of examining this difference is to look at the differences in geographic concentration of high, medium, and low priority calls in the emergency call dataset.</p>
-<div id="badf11a9-043d-472c-a247-1fbd15c42171" class="cell">
+<div id="badf11a9-043d-472c-a247-1fbd15c42171" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">3</span>, figsize <span class="op">=</span> (<span class="dv">24</span>,<span class="dv">8</span>)) <span class="co">#changing the number of subplots</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">#also want to adjust the figure size to accommodate a faceted graph</span></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -726,44 +742,22 @@ memory usage: 390.2 KB</code></pre>
 <span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>    ax.set_ylabel(<span class="st">'Latitude'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
 <span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="shootings_blog_files/figure-html/cell-15-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
 </div>
 <p>The graphs above demonstrate that the spatial distribution of emergency calls does change based on the type of call analyzed. Center city still has the most calls in each type of graph (which we might expect based on its location at the intersection of the Broad Street And Market Frankford Lines). However high priority calls are significantly more likely in Northeast Philadelphia, especially at the intersection of the precincts on Leigh Avenue and in Kensington. Given the well known drug-abuse issues in this neighborhood, and high poverty rates in certain concentrated areas, it makes sense that we might see higher numbers of emergency calls. Similarly, we see more high-priority calls stretching across west Philadelphia, with low-priority calls concentrated only in two cells of the graph.</p>
-</section>
-<section id="are-shootings-and-emergency-calls-correlated" class="level2">
-<h2 class="anchored" data-anchor-id="are-shootings-and-emergency-calls-correlated">Are shootings and emergency calls correlated?</h2>
-<p>To determine if this pattern is true beyond image-based analysis, we can look at the correlation betwen shootings and emergency calls if we arrange the shooting data into the same unit of analysis.</p>
-<div id="ad0ca2db-2ace-4a2a-82c1-a8e2df62f29a" class="cell" data-execution_count="22">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># crash_hex7_gdf = gpd.sjoin(hex_r7, crash_gdf)</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co">#join the shootings dataset and the hexagons</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>shoot_hex <span class="op">=</span> gpd.sjoin(hexes, shootings_gdf)</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>shoot_hex.columns <span class="co">#don't know why i get a left and right object id...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="22">
-<pre><code>Index(['objectid_left', 'grid_id', 'Shape__Area', 'Shape__Length', 'geometry',
-       'index_right', 'the_geom', 'the_geom_webmercator', 'objectid_right',
-       'year', 'dc_key', 'code', 'date_', 'time', 'race', 'sex', 'age',
-       'wound', 'officer_involved', 'offender_injured', 'offender_deceased',
-       'location', 'latino', 'point_x', 'point_y', 'dist', 'inside', 'outside',
-       'fatal', 'lat', 'lng'],
-      dtype='str')</code></pre>
-</div>
-</div>
-<div id="00b86bc0-61e1-4692-828f-adcd328f0cf9" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># crash_cnt_hex7 = crash_hex7_gdf.dissolve(by='objectid', aggfunc='count')</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co">#aggregate the number of shootings into different hexagons (?)</span></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>cnt_shoot_hex <span class="op">=</span> shoot_hex.dissolve(by <span class="op">=</span> <span class="st">''</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div id="d793a02d-f005-480f-8550-09d34f4b6947" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># crash_cnt_hex7.plot(column='grid_id', legend=True)#</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co">#plot the results of the shootings by hexagon</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div id="349417ab-5322-4fb0-b00e-13fe831248bb" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co">#merge shootings data and </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
 </section>
 <section id="conclusion" class="level1">
 <h1>Conclusion</h1>
 <section id="what-does-this-tell-us-about-the-relationship-between-gun-violence-and-different-crime-reporting-patterns" class="level2">
 <h2 class="anchored" data-anchor-id="what-does-this-tell-us-about-the-relationship-between-gun-violence-and-different-crime-reporting-patterns">What does this tell us about the relationship between gun violence and different crime reporting patterns?</h2>
+<p>The comparison between shooting locations and 911 call volume reveals a meaningful disconnect. Gun violence clusters heavily in North and West Philadelphia: Kensington, Leigh Avenue, the corridor along Market Street near 60th. However, emergency call volume is highest around Center City, likely driven by the density of transit, foot traffic, and mixed-use activity near the Broad Street and Market-Frankford lines.</p>
+<p>That gap suggests that 911 call data alone is a poor proxy for gun violence exposure. High-poverty neighborhoods with elevated shooting rates don’t necessarily generate more calls. Mistrust of law enforcement, fear of retaliation, and community norms around handling disputes internally all may factor into communities’ call rates in exactly the neighborhoods where violence is most concentrated. The high-priority call map offers a partial correction: Northeast Philadelphia and parts of West Philly do show elevated high-priority call density, which tracks more closely with the shooting data than total call volume does.</p>
 
 
 </section>
