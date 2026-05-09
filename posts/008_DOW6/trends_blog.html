@@ -201,7 +201,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Google Trends Data Analysis</h1>
 <p>Yesterday, the Pentagon released a series of fuzzy images, sparking speculation, riddicule, and tin-foil hats? The U.A.P’s which are colloquially known as UFOs, are part of the Trump administration’s commitment to “transparency” according to a report by the <a href="https://www.nytimes.com/2026/05/08/us/politics/pentagon-ufo-files.html">New York Times</a>.</p>
 <p>UFO’s are the object of fascination for many Americans. Area 51, outside of Las Vegas, is a tourist destination where fascination for the unknown interstellar is made even more intriguing by government mistique. Shows like the X files allow watchers to fantasize about what mysteries space might hold.</p>
-<p>The government’s release of files containing supposed UFOs marks the first time that the executive office has engaged substantively on the issue since 2017, when the New York Times first reported that there was a government program.</p>
+<p>The government’s release of files containing supposed UFOs marks the first time that the executive office has engaged substantively on the issue since 2017, when the New York Times first reported that there was a government program to track UFOs.</p>
 <p>In this analysis, I’ll trace how trends in google searches change with different sightings of strange objects and government engagement with UFOs. The question is whether this engagement adds fuel to the fires of fictional foreign-objects, or whether Americans seem organically concerned about UFOs?</p>
 <div id="49594a44-034e-446f-830b-9917e3fc2db6" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -279,8 +279,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="aba59690-4a9e-40c7-9e22-d5eff413ec41" class="cell" data-execution_count="15">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#asked claude to help me generate a list of different pop culture moments and government engagement with UFOs to see how the spikes differ by cause</span></span>
+<div id="aba59690-4a9e-40c7-9e22-d5eff413ec41" class="cell" data-execution_count="20">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#a list of different pop culture moments and government engagement with UFOs to see how the spikes differ by cause (generated w. help of AI)</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>events <span class="op">=</span> {</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Government/Disclosure — blue vertical lines</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'2017-12-01'</span>: (<span class="st">'NYT Pentagon Program Story'</span>, <span class="st">'gov'</span>),</span>
@@ -320,14 +320,53 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-</section>
-<section id="conclusion" class="level1">
-<h1>Conclusion</h1>
 <p>The analysis shows that interest in UFOs over time remains relatively low, unless there are significant events that would pique people’s interest. However, after significant interest in a UFO sighting, the trendline goes down more slowly, meaning that we expect some lasting effects of UFO-related events on people’s interest in UFOs over time– even over years.</p>
 <p>Additionally, the spikes demonstrate that government reports and pop-culture moments, like the premier of the movie “Ancient Aliens” seem to drive significant online traffic about UFOs. However this doesn’t seem any more or less significant than the release of government data.</p>
 <p>Therefore as the government has once more engaged in the subject of UFOs, the public may be watching.</p>
+<section id="follow-up" class="level2">
+<h2 class="anchored" data-anchor-id="follow-up">Follow Up</h2>
+<p>A follow-up question from this graph might be what drives the more sustained interest that shows up after the particularly high spikes. To answer, it might be helpful to narrow into a time frame to minimize the noise that might inherently exist in the graph, differentiating events like UFO sightings from anomalous trends in how people use search engines.</p>
+<p>To do this, I will investigate the area after the spike in 2008 fom 2010 where the next spike occurs.</p>
+<div id="87bfa693-e693-4e9a-a1e5-f28683a1e55a" class="cell" data-execution_count="30">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#follow up code: </span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>narrowed <span class="op">=</span> (ufo.index <span class="op">&gt;=</span> <span class="st">'2008-01-01'</span>) <span class="op">&amp;</span> (ufo.index <span class="op">&lt;=</span> <span class="st">'2010-07-01'</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>ufo_new <span class="op">=</span> ufo[narrowed]</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co">#replotting: </span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">5</span>))</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>ax.plot(ufo_new.index, ufo_new.values, color<span class="op">=</span><span class="st">'grey'</span>, linewidth<span class="op">=</span><span class="fl">1.2</span>)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co">#adapting earlier code to replot:</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> date_str, (label, category) <span class="kw">in</span> events.items(): <span class="co">#make sure labels are still present</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    date <span class="op">=</span> pd.to_datetime(date_str)</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> pd.to_datetime(<span class="st">'2008-01-01'</span>) <span class="op">&lt;=</span> date <span class="op">&lt;=</span> pd.to_datetime(<span class="st">'2012-01-01'</span>):</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>        ax.axvline(date, color<span class="op">=</span>colors[category], linestyle<span class="op">=</span><span class="st">'--'</span>, linewidth<span class="op">=</span><span class="fl">1.2</span>)</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>        ax.text(date, ufo_new.values.<span class="bu">max</span>() <span class="op">*</span> <span class="fl">0.95</span>, label,</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>                rotation<span class="op">=</span><span class="dv">90</span>, fontsize<span class="op">=</span><span class="dv">8</span>, va<span class="op">=</span><span class="st">'top'</span>, color<span class="op">=</span>colors[category])</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'UFO Search Interest: 2008–2012'</span>)</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Date'</span>)</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Search Interest (</span><span class="sc">% o</span><span class="st">f all searches)'</span>)</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="trends_blog_files/figure-html/cell-8-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>From this graph, we can see that although the general trend is that sightings decrease after 2008, there are a few spikes that seem to drive the variation in the graph. Googling these results can tell us that a few of these spikes are associated with supposed UFO sightings.</p>
+<p>In July of 2008, for example, there were apparently sightings in Buck’s county, and google reports that there were approximately 138 sightings around that time. MUFON <a href="https://6abc.com/archive/6241888/">the mutual UFO Network</a> looks into the validity of claims of UFO sightings, noting that most are man made.</p>
+<p>After this, in October 2008, multiple UFO sightings were reported, most notably in North Central Texas, where residents reported strange lights on October 23, 2008, following a major wave of sightings earlier that year. These reports, often describing oval-shaped objects, were accompanied by sightings of military F-16 jets in the area. Other 2008 reports are documented by the National UFO Reporting Center.</p>
+<p>Therefore even as America and other countries have launched more objects into space, it’s surprising that trends can be consistently linked to sightings or pop culture events.</p>
+<p>This is important as we consider the actions of the Trump administration in releasing new data regarding UFOs. On the one hand, increasing public access to information about space objects may decrease unsubstantiable skepticism about UFOs. However, given the trails in the spikes of both pop culture and government engagement around UFOs, it seems as though this new release of information may simply serve to increase speculation.</p>
+<p>The Google Trends Data suggests that as information about UFOs increases, thir popularity does not decrease. This runs counter to the trend of scientific discovery where we are learning more about the universe, and becoming significantly better at identifying what might exist beyond our atmosphere, we should rely less on pop-culture and less substantive definitions like “UFOs.”</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
